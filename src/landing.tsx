@@ -5,10 +5,9 @@ import React, { useEffect, useReducer } from 'react';
 // import history from "../../Helpers/history";
 // import DbList from './DbList';
 // import { observer} from 'mobx-react-lite';
-
 //const electron = window.require('electron') 
-const electron = require('electron');
-const { ipcRenderer } = electron;
+//const electron = require('electron');
+//const { ipcRenderer } = electron;
 
 
 interface State {
@@ -52,7 +51,8 @@ function reducer(state: State, action: {type : string, payload : string[]}) {
 	const fetchDBs = async (): Promise<string[]> => {
         console.log("TRYING \n  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ \n")
 		try {
-			const files: string[] | [] = await ipcRenderer.invoke('asynchronous-get-DBs');
+			//const files: string[] | [] = await ipcRenderer.invoke('asynchronous-get-DBs');
+            const files : string[] | [] = await window.e_Landing.getDbs();
 			return files;
 		} 
 
@@ -91,7 +91,7 @@ function reducer(state: State, action: {type : string, payload : string[]}) {
 		
 		<>
          <p>Hi</p>
-         <button onClick={NeedFetch}></button>
+         <button onClick={NeedFetch}>Need Fetch</button>
         </>
 	)	
 }

@@ -25,5 +25,15 @@
  *  });
  * ```
  */
-
 import './app';
+
+// export interface IMyAPI {
+//     getDbs: () => void
+//   }
+  
+//   declare global {
+//     interface Window {
+//       getDbs: IMyAPI
+//     }
+//   }
+

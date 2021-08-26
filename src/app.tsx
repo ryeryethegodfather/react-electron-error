@@ -4,7 +4,7 @@ import Landing from './landing';
 import Simple from './simple';
 
 function render() {
-    ReactDOM.render(<Landing />, document.body);
+    ReactDOM.render(<Landing />, document.getElementById("root"));
 }
 
 render();
